@@ -1,7 +1,8 @@
 
 import { getProjectsSortedByDate } from './projects';
 import { timeAgo } from './time';
-import { generateBackgroundFromString, generateBorderStylesFromString } from './color';
+
+import { stringToComplexGradient, stringToSolidBorderColor } from './color';
 
 export default class ProjectList extends HTMLElement {
   
@@ -13,13 +14,11 @@ export default class ProjectList extends HTMLElement {
     this.#render();
   }
   
-  
-  
   #render(){
     this.innerHTML = /*html*/ `
     
       ${ getProjectsSortedByDate().map(project => /*html*/ `
-        <a href="${ project.url }" target="_blank" class="relative group select-none border border-black/5 dark:border-white/5">
+        <a href="${ project.url }" target="_blank" class="relative group select-none border border-black/25 dark:border-white/25">
           <div style="bg-red-500 -top-2 left-0 absolute w-full h-full"></div>
           <div class="relative overflow-hidden flex w-[256px] h-[256px] flex-col p-4">
             <span class="text-black dark:text-white font-bold pb-1">${ project.name }</span>
@@ -27,6 +26,7 @@ export default class ProjectList extends HTMLElement {
             <span tooltip="${ project.date }" class="w-full pb-1 !text-[#727272] !dark:text-[#B4B4B4]">${ timeAgo(project.date) }</span>
           </div>
           ${ project.image ? /*html*/ `<img src="/static/project-images/${ project.image }" class="absolute -z-[1] top-0 left-0 w-full h-full object-cover opacity-15" />` : '' }
+          <div class="w-full h-full absolute left-0 top-0 -z-[1] opacity-10" style="background: ${ stringToComplexGradient(project.description) }"></div>
         </a>
       `).join('') }
       
