@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeremy J Parmenter</title>
+  <link rel="stylesheet" href="/static/_/client.css">
+  <script src="/static/_/client.js"></script>
+  <link rel="icon" href="/static/assets/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="a" type="image/png">
+  <style>
+    
+    @media (prefers-color-scheme: light) {
+      body {
+        background: url('/static/assets/bg-tile-light.png');
+      }
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: url('/static/assets/bg-tile-dark.png');
+      }
+    }
+    
+    body{
+      background-size: 180px;
+    }
+    
+  </style>
+</head>
+<body class="pt-32 px-8">
+  
+  <section class="w-full max-w-7xl mx-auto">
+    <h1 class="sm:text-6xl text-2xl text-black dark:text-white font-bold">Jeremy J Parmenter</h1>
+    <p class="pt-6 pb-4 text-[#727272] dark:text-[#A4A4A4]">Hey,</p>
+    <p class="py-1 max-w-xl text-[#727272] dark:text-[#A4A4A4]">I started my tech journey wanting to get rich quick and quickly fell in love with the beauty of creating. I've spent many years constantly up-skilling and several years professionally working as a web designer and developer.</p>
+    <p class="py-1 pb-6 text-[#727272] dark:text-[#A4A4A4]">Always available for a chat, <span onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });" class="select-none cursor-pointer font-bold !text-black dark:!text-white underline">contact me</span>!</p>
+  </section>
+  
+  <section class="flex flex-col pt-4 w-full max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-black dark:text-white">Projects</h2>
+    <project-list class="flex flex-wrap gap-8 mt-4"></project-list>
+  </section>
+  
+  <section class="py-24 text-white pb-32 w-full max-w-7xl mx-auto" id="contact">
+    <h2 class="text-3xl font-bold text-black dark:text-white">Contact</h2>
+    <div class="flex text-black dark:text-white">
+      <div class="flex flex-col text-right pr-4 pt-4">
+        <span class="font-bold">Email:</span>
+        <span class="font-bold pt-2">X:</span>
+      </div>
+      <div class="flex flex-col pt-4">
+        <span class="select-all text-gray-500 dark:text-gray-400">business@jeremyjaydan.com</span>
+        <a class="text-[#6573DE] hover:underline pt-2" target="_blank" href="https://x.com/JeremyJaydan">x.com/JeremyJaydan</a>
+      </div>
+    </div>
+    <div class="mt-4">
+      <div class="flex select-none cursor-pointer text-gray-500 dark:text-gray-300 dark:hover:text-white hover:text-black" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up"><path d="m17 11-5-5-5 5"/><path d="m17 18-5-5-5 5"/></svg>
+        <span>Back to top</span>
+      </div>
+    </div>
+  </section>
+  
+</body>
+</html>
