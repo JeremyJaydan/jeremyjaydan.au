@@ -2,8 +2,6 @@
 import { getProjectsSortedByDate } from './projects';
 import { timeAgo } from './time';
 
-import { stringToComplexGradient, stringToSolidBorderColor } from './color';
-
 export default class ProjectList extends HTMLElement {
   
   constructor(){
@@ -26,7 +24,6 @@ export default class ProjectList extends HTMLElement {
             <span tooltip="${ project.date }" class="w-full pb-1 !text-[#727272] !dark:text-[#B4B4B4]">${ timeAgo(project.date) }</span>
           </div>
           ${ project.image ? /*html*/ `<img src="/static/project-images/${ project.image }" class="absolute -z-[1] top-0 left-0 w-full h-full object-cover opacity-15" />` : '' }
-          <div class="w-full h-full absolute left-0 top-0 -z-[1] opacity-10" style="background: ${ stringToComplexGradient(project.description) }"></div>
         </a>
       `).join('') }
       
