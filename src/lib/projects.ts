@@ -38,25 +38,25 @@ const projects = [
     image: "project-launcher-preview.png"
   },
   {
-    name: "brain.jeremyjaydan.dev",
+    name: "Brain",
     description: "Brainstorming tool built for speed",
     date: "2019-11-14",
-    url: "https://brain.jeremyjaydan.dev",
-    image: "brain.jeremyjaydan.dev.png"
+    url: "https://brain.jeremyjaydan.com",
+    image: "brain.png"
   },
   {
-    name: "code.jeremyjaydan.dev",
-    description: "Code playground built for speed",
+    name: "Code",
+    description: "Code sandbox built for speed",
     date: "2019-11-21",
-    url: "https://code.jeremyjaydan.dev",
-    image: "code.jeremyjaydan.dev.png"
+    url: "https://code.jeremyjaydan.com",
+    image: "code.png"
   },
   {
-    name: "md.jeremyjaydan.dev",
+    name: "md",
     description: "Markdown editor built for speed",
     date: "2019-03-23",
-    url: "https://md.jeremyjaydan.dev",
-    image: "md.jeremyjaydan.dev.png"
+    url: "https://md.jeremyjaydan.com",
+    image: "md.png"
   },
   {
     name: "apple-pages-tailwind",
