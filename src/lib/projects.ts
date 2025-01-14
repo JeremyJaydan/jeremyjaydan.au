@@ -10,6 +10,13 @@
 
 const projects = [
   {
+    name: "Color",
+    description: "Color manager built for speed",
+    date: "2024-03-13",
+    url: "https://color.jeremyjaydan.com",
+    image: "color.png"
+  },
+  {
     name: "Dismoji",
     description: "Create your own custom emojis!",
     date: "2019-12-28",
