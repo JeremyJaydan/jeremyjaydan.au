@@ -52,10 +52,10 @@ const projects = [
     image: "code.png"
   },
   {
-    name: "md",
-    description: "Markdown editor built for speed",
+    name: "Markmy",
+    description: "A markdown editor built for speed",
     date: "2019-03-23",
-    url: "https://md.jeremyjaydan.com",
+    url: "https://markmy.dev",
     image: "md.png"
   },
   {
