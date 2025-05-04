@@ -76,7 +76,7 @@ const projects = [
     name: "programming-challenges",
     description: "Spin the wheel of 100+ programming challenges",
     date: "2019-07-07",
-    url: "https://programming-challenges.jeremyjaydan.dev",
+    url: "https://challenges.jeremyjaydan.com",
     image: "programming-challenges.png"
   },
   {
