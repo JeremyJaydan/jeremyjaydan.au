@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tailwind": "tailwindcss -i src/index.css -o static/_/client.css",
-    "esbuild": "esbuild src/index.ts --bundle --minify --outfile=static/_/client.js",
+    "tailwind": "tailwindcss -i src/index.css -o static/dist/client.css",
+    "esbuild": "esbuild src/index.ts --bundle --minify --outfile=static/dist/client.js",
     "build": "npm run esbuild && npm run tailwind",
     "dev": "nodemon --watch ./index.html --watch ./src --ext html,ts,css --exec 'npm run build'"
   },
