@@ -1,0 +1,84 @@
+
+body{
+  background: white;
+  color: #444;
+  font-family: Arial;
+  font-size: larger;
+}
+
+time{
+  color: #333;
+}
+
+a{
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6{
+  color: black;
+}
+
+@media (prefers-color-scheme: dark){
+  body{
+    background: #111;
+    color: #bbb;
+  }
+  time{
+    color: lightgray;
+  }
+  a{
+    color: dodgerblue;
+  }
+  h1, h2, h3, h4, h5, h6{
+    color: #eee;
+  }
+}
+
+#home{
+  padding: 32px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#home article{
+  border-bottom: 1px solid #ccc;
+  padding: 4px 0;
+}
+
+@media (prefers-color-scheme: dark){
+  #home article{
+    border-color: #222;
+  }
+}
+
+#socials{
+  padding: 8px;
+}
+
+#post{
+  padding: 32px;
+  padding-bottom: 128px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin: 0;
+  margin-top: 32px;
+}
+
+#post article p{
+  line-height: 1.5;
+}
