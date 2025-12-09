@@ -1,0 +1,147 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>352 notes on motivation</title>
+  <link rel="stylesheet" href="/blog.css" />
+  <style>
+    
+    .note{
+      padding: 16px;
+      margin: 8px 0;
+      border: 1px solid transparent;
+      background: #f6f6f6;
+    }
+    
+    @media (prefers-color-scheme: dark){
+      .note{
+        background: #2b2b2b;
+      }
+    }
+    
+    .note:target{
+      scroll-margin-top: 30vh;
+      border-color: #476cd1;
+    }
+    
+    .note time{
+      color: #999;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    #notes-container-boundary{
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      justify-content: flex-end;
+    }
+    
+    #random-note-button{
+      position: sticky;
+      bottom: 16px;
+      margin: 0 auto;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+      left: 0;
+      right: 0;
+      max-width: 165px;
+      box-sizing: border-box;
+      background: #296ed9;
+      color: white;
+    }
+    
+    #random-note-button span{
+      padding-left: 4px;
+    }
+    
+  </style>
+</head>
+<body>
+  <main id="post">
+    <article>
+      
+      <header>
+        <h1>
+          352 notes on motivation
+        </h1>
+        <a tabindex="0" href="/">
+          Jeremy J Parmenter
+        </a>
+        <time datetime="2025-12-04">
+          December 9th, 2025
+        </time>
+      </header>
+
+      <h2>Driving force</h2>
+
+      <p>I originally went down the path of entrepreneurship to get rich quick, and a decade later I'm still on this path, albeit slow and not in it for the money. I've found a love for the craft, constantly up-skilling, learning, and solving. Even with a passion for the craft though I've still persistently asked myself why I'm doing this, what's the point?</p>
+
+      <p>I've written notes as I've come across different ideas of what it could be but it's my most recent note on the 27th of November that has struck a chord: agency is what matters. The ability to make my own decisions. I've thought about not working for someone as a reason to switch tracks but it seems it may also be a continuous driving force.</p>
+
+      <p>To be motivated by the ability to make one's own decisions is extremely liberating. I thought I needed to figure out point A to point B of product design and development but it seems all it took was just realizing that all I really want out of life is to make it my own.</p>
+
+      <h2>Motivational Notes</h2>
+
+      <p>Writing notes is a bit out of scope for this article I may write about that in a future. For now the context for the following notes is that at the start of the year I quit a freelance gig I had after 4 years and I decided to delete all my notes as they were mixed in with work notes. I probably wouldn't have deleted them in hindsight but that's alright just this year has been a big year for my note taking while I've been focused full time on up-skilling and building my own business.</p>
+
+      <p>This year I've written over 5k notes, 352 of which tagged with 'motivation' as I've tried to discover what drives me. The following are those motivational notes that I hope might be useful to anyone else on a similar journey.</p>
+      
+      <div id="notes-container-boundary">
+        <div id="notes-container"></div>
+        
+        <a tabindex="0" id="random-note-button" onclick="this.href = '#' + document.querySelectorAll('.note')[Math.floor(Math.random() * document.querySelectorAll('.note').length)].id">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dices-icon lucide-dices"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg>
+          <span>Random Note</span>
+        </a>
+      </div>
+      
+      <script type="module">
+        
+        import notes from '/352-notes-on-motivation/notes.js';
+        
+        function getDateString(iso) {
+          const d = new Date(iso);
+
+          const day = d.getDate();
+          const month = d.toLocaleString('en-US', { month: 'long' });
+          const year = d.getFullYear();
+
+          let hours = d.getHours();
+          const minutes = String(d.getMinutes()).padStart(2, '0');
+
+          const ampm = hours >= 12 ? 'PM' : 'AM';
+          hours = hours % 12 || 12; // convert 0 → 12
+
+          return `${day} ${month} ${year} at ${hours}:${minutes}${ampm}`;
+        }
+        
+        function timestampToId(timestamp) {
+          return 't' + timestamp.replace(/[^a-zA-Z0-9_]/g, '_');
+        }
+
+        const notesContainer = document.getElementById('notes-container');
+        notesContainer.innerHTML = notes.map(note => {
+          return /*html*/ `
+            <div class="note" id="${ timestampToId(note.creation_date) }">
+              <time datetime="${ note.creation_date }">
+                <a href="#${ timestampToId(note.creation_date) }"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link2-icon lucide-link-2"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg></a>
+                <span>${ getDateString(note.creation_date) }</span>
+              </time>
+              <div class="note-body">
+                ${ note.html_body}
+              </div>
+            </div>
+          `
+        }).join('');
+        
+      </script>
+      
+    </article>
+  </main>
+</body>
+</html>
